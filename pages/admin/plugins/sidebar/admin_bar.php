@@ -13,7 +13,7 @@
         <img src="../../dist/img/user.png" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="index.php" class="d-block"><?=htmlspecialchars($_SESSION['name']);?></a>
+        <a href="index.php" class="d-block"><?= htmlspecialchars($_SESSION['name']); ?></a>
       </div>
     </div>
 
@@ -23,30 +23,54 @@
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
         <li class="nav-item">
-          <?php if ($_SERVER['REQUEST_URI'] == "/k_temp/pages/admin/index.php") {?>
-          <a href="index.php" class="nav-link active">
-          <?php } else {?>
-          <a href="index.php" class="nav-link">
-          <?php } ?>
-            <i class="nav-icon fas fa-bus"></i>
-            <p>
-              Dashboard
-            </p>
-          </a>
+          <?php if ($_SERVER['REQUEST_URI'] == "/k_temp/pages/admin/index.php") { ?>
+            <a href="index.php" class="nav-link active">
+            <?php } else { ?>
+              <a href="index.php" class="nav-link">
+              <?php } ?>
+              <i class="nav-icon fas fa-bus"></i>
+              <p>
+                Dashboard
+              </p>
+              </a>
         </li>
         <li class="nav-item">
-          <?php if ($_SERVER['REQUEST_URI'] == "/k_temp/pages/admin/index2.php") {?>
-          <a href="index2.php" class="nav-link active">
-          <?php } else {?>
-          <a href="index2.php" class="nav-link">
-          <?php } ?>
-            <i class="nav-icon fas fa-question"></i>
-            <p>
-              Datatable
-            </p>
-          </a>
+          <?php if ($_SERVER['REQUEST_URI'] == "/k_temp/pages/admin/index2.php") { ?>
+            <a href="index2.php" class="nav-link active">
+            <?php } else { ?>
+              <a href="index2.php" class="nav-link">
+              <?php } ?>
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Datatable
+              </p>
+              </a>
         </li>
-        <?php include 'logout.php';?>
+        <li class="nav-item">
+          <?php if ($_SERVER['REQUEST_URI'] == "/k_temp/pages/admin/pagination.php") { ?>
+            <a href="pagination.php" class="nav-link active">
+            <?php } else { ?>
+              <a href="pagination.php" class="nav-link">
+              <?php } ?>
+              <i class="nav-icon fas fa-list-ol"></i>
+              <p>
+                Pagination
+              </p>
+              </a>
+        </li>
+        <li class="nav-item">
+          <?php if ($_SERVER['REQUEST_URI'] == "/k_temp/pages/admin/accounts.php") { ?>
+            <a href="accounts.php" class="nav-link active">
+          <?php } else { ?>
+            <a href="accounts.php" class="nav-link">
+            <?php } ?>
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Accounts Management
+              </p>
+            </a>
+        </li>
+        <?php include 'logout.php'; ?>
       </ul>
     </nav>
     <!-- /.sidebar-menu -->
