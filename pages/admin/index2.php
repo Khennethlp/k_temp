@@ -16,12 +16,12 @@
         <!-- end of alert -->
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Card</h1>
+          <h1 class="m-0">Datatable</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-            <li class="breadcrumb-item ">Card</li>
+            <li class="breadcrumb-item ">Datatable</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -36,7 +36,7 @@
         <div class="col-sm-12">
           <div class="card card-danger card-outline">
             <div class="card-header">
-              <h3 class="card-title"><i class="fas fa-file-alt"></i> Sample Card</h3>
+              <h3 class="card-title"><i class="fas fa-file-alt"></i> Datatable</h3>
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
                   <i class="fas fa-minus"></i>
@@ -60,7 +60,7 @@
                           <th scope="col">Handle</th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody id="dt_tbody">
                         <tr>
                           <th scope="row">1</th>
                           <td>Mark</td>

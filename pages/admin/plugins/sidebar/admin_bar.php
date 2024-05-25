@@ -61,14 +61,38 @@
         <li class="nav-item">
           <?php if ($_SERVER['REQUEST_URI'] == "/k_temp/pages/admin/accounts.php") { ?>
             <a href="accounts.php" class="nav-link active">
-          <?php } else { ?>
-            <a href="accounts.php" class="nav-link">
-            <?php } ?>
+            <?php } else { ?>
+              <a href="accounts.php" class="nav-link">
+              <?php } ?>
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Accounts Management
               </p>
-            </a>
+              </a>
+        </li>
+        <li class="nav-item">
+          <?php if ($_SERVER['REQUEST_URI'] == "/k_temp/pages/admin/barQr.php") { ?>
+            <a href="barQr.php" class="nav-link active">
+            <?php } else { ?>
+              <a href="barQr.php" class="nav-link">
+              <?php } ?>
+              <i class="nav-icon fas fa-barcode"></i>
+              <p>
+                Barcode & QR Generator
+              </p>
+              </a>
+        </li>
+        <li class="nav-item">
+          <?php if ($_SERVER['REQUEST_URI'] == "/k_temp/pages/admin/ts.php") { ?>
+            <a href="ts.php" class="nav-link active">
+            <?php } else { ?>
+              <a href="ts.php" class="nav-link">
+              <?php } ?>
+              <i class="nav-icon fas fa-retweet"></i>
+              <p>
+                Table Switching
+              </p>
+              </a>
         </li>
         <?php include 'logout.php'; ?>
       </ul>
