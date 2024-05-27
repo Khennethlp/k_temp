@@ -53,7 +53,11 @@ if (!isset($_SESSION['username'])) {
   
   </style>
 </head>
+<<<<<<< HEAD
 <body class="hold-transition sidebar-mini layout-fixed dark-mode"> <!---- change body to light mode => (remove dark mode)-----!>
+=======
+<body class="hold-transition sidebar-mini layout-fixed "> <!---- change body to light mode => (remove dark mode)-----!>
+>>>>>>> 4e4057db238dcd79ef1ca7b5e48570a32c01c4d2
 <div class="wrapper">
 
   <!-- Preloader -->
@@ -68,7 +72,11 @@ if (!isset($_SESSION['username'])) {
   </div>
 
   <!-- Navbar -->
+<<<<<<< HEAD
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+=======
+  <nav class="main-header navbar navbar-expand navbar-dark">
+>>>>>>> 4e4057db238dcd79ef1ca7b5e48570a32c01c4d2
     <!-- Left navbar links -->
     
     <ul class="navbar-nav">

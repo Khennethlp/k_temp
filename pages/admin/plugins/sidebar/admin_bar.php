@@ -13,7 +13,11 @@
         <img src="../../dist/img/user.png" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
+<<<<<<< HEAD
         <a href="index.php" class="d-block"><?=htmlspecialchars($_SESSION['name']);?></a>
+=======
+        <a href="index.php" class="d-block"><?= htmlspecialchars($_SESSION['name']); ?></a>
+>>>>>>> 4e4057db238dcd79ef1ca7b5e48570a32c01c4d2
       </div>
     </div>
 
@@ -23,6 +27,7 @@
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
         <li class="nav-item">
+<<<<<<< HEAD
           <?php if ($_SERVER['REQUEST_URI'] == "/k_temp/pages/admin/index.php") {?>
           <a href="index.php" class="nav-link active">
           <?php } else {?>
@@ -47,9 +52,87 @@
           </a>
         </li>
         <?php include 'logout.php';?>
+=======
+          <?php if ($_SERVER['REQUEST_URI'] == "/k_temp/pages/admin/index.php") { ?>
+            <a href="index.php" class="nav-link active">
+            <?php } else { ?>
+              <a href="index.php" class="nav-link">
+              <?php } ?>
+              <i class="nav-icon fas fa-bus"></i>
+              <p>
+                Dashboard
+              </p>
+              </a>
+        </li>
+        <li class="nav-item">
+          <?php if ($_SERVER['REQUEST_URI'] == "/k_temp/pages/admin/index2.php") { ?>
+            <a href="index2.php" class="nav-link active">
+            <?php } else { ?>
+              <a href="index2.php" class="nav-link">
+              <?php } ?>
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Datatable
+              </p>
+              </a>
+        </li>
+        <li class="nav-item">
+          <?php if ($_SERVER['REQUEST_URI'] == "/k_temp/pages/admin/pagination.php") { ?>
+            <a href="pagination.php" class="nav-link active">
+            <?php } else { ?>
+              <a href="pagination.php" class="nav-link">
+              <?php } ?>
+              <i class="nav-icon fas fa-list-ol"></i>
+              <p>
+                Pagination
+              </p>
+              </a>
+        </li>
+        <li class="nav-item">
+          <?php if ($_SERVER['REQUEST_URI'] == "/k_temp/pages/admin/accounts.php") { ?>
+            <a href="accounts.php" class="nav-link active">
+            <?php } else { ?>
+              <a href="accounts.php" class="nav-link">
+              <?php } ?>
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Accounts Management
+              </p>
+              </a>
+        </li>
+        <li class="nav-item">
+          <?php if ($_SERVER['REQUEST_URI'] == "/k_temp/pages/admin/barQr.php") { ?>
+            <a href="barQr.php" class="nav-link active">
+            <?php } else { ?>
+              <a href="barQr.php" class="nav-link">
+              <?php } ?>
+              <i class="nav-icon fas fa-barcode"></i>
+              <p>
+                Barcode & QR Generator
+              </p>
+              </a>
+        </li>
+        <li class="nav-item">
+          <?php if ($_SERVER['REQUEST_URI'] == "/k_temp/pages/admin/ts.php") { ?>
+            <a href="ts.php" class="nav-link active">
+            <?php } else { ?>
+              <a href="ts.php" class="nav-link">
+              <?php } ?>
+              <i class="nav-icon fas fa-retweet"></i>
+              <p>
+                Table Switching
+              </p>
+              </a>
+        </li>
+        <?php include 'logout.php'; ?>
+>>>>>>> 4e4057db238dcd79ef1ca7b5e48570a32c01c4d2
       </ul>
     </nav>
     <!-- /.sidebar-menu -->
   </div>
   <!-- /.sidebar -->
+<<<<<<< HEAD
 </aside>
+=======
+</aside>
+>>>>>>> 4e4057db238dcd79ef1ca7b5e48570a32c01c4d2

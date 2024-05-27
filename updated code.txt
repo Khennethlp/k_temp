@@ -1,0 +1,20 @@
+echo $line = preg_replace('/\s+/', '', $line)."<br>";
+
+// Extract and store each part in variables
+$location = substr($line, 0, 5);
+$product_code = substr($line, 5, 16);
+$date = substr($line, 10, 6);
+$part_code = substr($line, 21, 5);
+$quant = substr($line, 32, 3);
+$cot = substr($line, 36, 3);
+$d = substr($line, 49, 8);
+// Continue extracting other parts as needed
+
+// Output the extracted values
+echo "Location: " . $location . "<br>";
+echo "Product Code: " . $product_code . "<br>";
+// echo "Date: " . $date . "<br>";
+echo "Part Code: " . $part_code . "<br>";
+echo "Quantity: " . $quant . "<br>";
+echo "Op No: " . $cot . "<br>";
+echo "Date: " . $d . "<br>";

@@ -21,7 +21,11 @@ date_default_timezone_set('Asia/Manila');
 $servername = 'localhost'; $username = 'root'; $password = '';
 
 try {
+<<<<<<< HEAD
     $conn = new PDO ("mysql:host=$servername;dbname=tms_inventory",$username,$password);
+=======
+    $conn = new PDO ("mysql:host=$servername;dbname=web_template",$username,$password);
+>>>>>>> 4e4057db238dcd79ef1ca7b5e48570a32c01c4d2
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo 'NO CONNECTION'.$e->getMessage();
