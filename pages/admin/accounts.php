@@ -62,7 +62,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body table-responsive p-0" id="tbl_div" style="height: 300px; overflow: auto;">
+                                        <div class="card-body table-responsive p-0" id="tbl_div" style="height: 550px; overflow: auto; display:inline-block;">
                                             <table class="table table-head-fixed text-nowrap" id="tbl_k" style="width: 100%;" >
                                                 <thead>
                                                     <tr>
@@ -74,15 +74,15 @@
                                                         <th>Role</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody id="sample_tbl_accounts"> </tbody>
+                                                <tbody id="sample_tbl_accounts" style="height: 300px;"> </tbody>
                                             </table>
-                                            <div class="d-flex justify-content-sm-end">
-                                                <div class="dataTables_info" id="t_table_info" role="status" aria-live="polite">
-                                                </div>
+                                        </div>
+                                        <div class="d-flex justify-content-sm-end m-2">
+                                            <div class="dataTables_info" id="t_table_info" role="status" aria-live="polite">
                                             </div>
-                                            <div class="d-flex justify-content-sm-center">
-                                                <button type="button" class="btn bg-gray-dark" id="btnNextPage" style="display:none;" onclick="get_next_page()">Load more</button>
-                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-sm-center">
+                                            <button type="button" class="btn bg-gray-dark mb-2" id="btnNextPage" style="display:none;" onclick="get_next_page()">Load more</button>
                                         </div>
                                     </div>
                                 </div>
