@@ -20,7 +20,7 @@ function count_sample_t1_data($conn)
 }
 
 if ($method == 'load_sample_t1_data_last_page') {
-    $results_per_page = 5;
+    $results_per_page = 10;
 
     $number_of_result = intval(count_sample_t1_data($conn));
 
@@ -75,7 +75,7 @@ if ($method == 'load_sample_t1_data') {
     $current_page = isset($_POST['current_page']) ? max(1, intval($_POST['current_page'])) : 1;
     $c = 0;
 
-    $results_per_page = 5;
+    $results_per_page = 10;
 
     //determine the sql LIMIT starting number for the results on the displaying page
     $page_first_result = ($current_page - 1) * $results_per_page;
@@ -86,9 +86,10 @@ if ($method == 'load_sample_t1_data') {
     $stmt = $conn->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
     $stmt->execute();
     if ($stmt->rowCount() > 0) {
-        foreach ($stmt->fetchALL() as $row) {
+        foreach ($stmt->fetchAll() as $row) {
             $c++;
             // echo '<tr style="cursor:pointer; text-align:center;" class="modal-trigger" onclick="load_sample_table_2(&quot;' . $row['id'] . '~!~' . $row['sample_id'] . '&quot;)">';
+            echo '<tr>';
             echo '<td>' . $c . '</td>';
             echo '<td>' . $row['id_number'] . '</td>';
             echo '<td>' . $row['full_name'] . '</td>';
