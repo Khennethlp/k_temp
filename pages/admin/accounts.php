@@ -62,7 +62,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body table-responsive p-0" id="tbl_div" style="height: 550px; overflow: auto; display:inline-block;">
+                                        <div class="card-body table-responsive p-0" id="tbl_div" style="height: 300px; overflow: auto; display:inline-block;">
                                             <table class="table table-head-fixed text-nowrap" id="tbl_k" style="width: 100%;" >
                                                 <thead>
                                                     <tr>

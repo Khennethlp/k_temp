@@ -4,7 +4,7 @@
         load_sample_table();
     });
 
- 
+
 
     const add_account = () => {
         var emp_id = document.getElementById('add_emp_id').value;
@@ -14,60 +14,70 @@
         var section = document.getElementById('add_section').value;
         var role = document.getElementById('add_user_type').value;
 
-        $.ajax({
-            type: "POST",
-            url: '../../process/admin/accounts_p.php',
-            cache: false,
-            data: {
-                method: 'add_account',
-                emp_id: emp_id,
-                fullname: fullname,
-                username: username,
-                password: password,
-                section: section,
-                role: role,
-            },
-            success: function(response) {
-                if (response == 'success') {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Successfully Recorded !!!',
-                        text: 'Success',
-                        showConfirmButton: false,
-                        timer: 1000
-                    });
-                    $('#add_acc').modal('hide');
-                    $('#add_emp_id').val('');
-                    $('#add_fullname').val('');
-                    $('#add_username').val('');
-                    $('#add_password').val('');
-                    $('#add_user_type').val('');
-                    load_accounts();
-                } else if (response == 'duplicate') {
-                    Swal.fire({
-                        icon: 'info',
-                        title: 'Duplicate Data !!!',
-                        text: 'Information',
-                        showConfirmButton: false,
-                        timer: 1000
-                    });
-                    $('#add_acc').modal('hide');
-                    $('#add_emp_id').val('');
-                    $('#add_fullname').val('');
-                    $('#add_username').val('');
-                    $('#add_password').val('');
-                    $('#add_user_type').val('');
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error !!!',
-                        text: 'Error',
-                        showConfirmButton: false,
-                        timer: 1000
-                    });
+        if (emp_id === '' || fullname === '' || username === '' || password === '' || section === '' || role === '') {
+            Swal.fire({
+                icon: 'info',
+                title: 'Fields must not be empty !!!',
+                text: 'information',
+                showConfirmButton: true,
+                // timer: 1000
+            });
+        } else {
+            $.ajax({
+                type: "POST",
+                url: '../../process/admin/accounts_p.php',
+                cache: false,
+                data: {
+                    method: 'add_account',
+                    emp_id: emp_id,
+                    fullname: fullname,
+                    username: username,
+                    password: password,
+                    section: section,
+                    role: role,
+                },
+                success: function(response) {
+                    if (response == 'success') {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Successfully Recorded !!!',
+                            text: 'Success',
+                            showConfirmButton: false,
+                            timer: 1000
+                        });
+                        $('#add_acc').modal('hide');
+                        $('#add_emp_id').val('');
+                        $('#add_fullname').val('');
+                        $('#add_username').val('');
+                        $('#add_password').val('');
+                        $('#add_user_type').val('');
+                        load_accounts();
+                    } else if (response == 'duplicate') {
+                        Swal.fire({
+                            icon: 'info',
+                            title: 'Duplicate Data !!!',
+                            text: 'Information',
+                            showConfirmButton: false,
+                            timer: 1000
+                        });
+                        $('#add_acc').modal('hide');
+                        $('#add_emp_id').val('');
+                        $('#add_fullname').val('');
+                        $('#add_username').val('');
+                        $('#add_password').val('');
+                        $('#add_user_type').val('');
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error !!!',
+                            text: 'Error',
+                            showConfirmButton: false,
+                            timer: 1000
+                        });
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 
     // const search_accounts = () => {
@@ -93,14 +103,14 @@
         // var date_to = document.getElementById("date_to");
         var search_accounts = document.getElementById("search_accounts").value;
 
-        if(search_accounts){
-            window.open('../../process/admin/print/print_accounts.php?q=' + search_accounts, 'Print Account', 'width=600, height=520' );
-        }else{
-            window.open('../../process/admin/print/print_accounts.php', 'Print Account', 'width=600, height=520' );
+        if (search_accounts) {
+            window.open('../../process/admin/print/print_accounts.php?q=' + search_accounts, 'Print Account', 'width=600, height=520');
+        } else {
+            window.open('../../process/admin/print/print_accounts.php', 'Print Account', 'width=600, height=520');
         }
     }
 
-    document.getElementById("tbl_div").addEventListener("scroll", function () {
+    document.getElementById("tbl_div").addEventListener("scroll", function() {
         var scrollTop = document.getElementById("tbl_div").scrollTop;
         var scrollHeight = document.getElementById("tbl_div").scrollHeight;
         var offsetHeight = document.getElementById("tbl_div").offsetHeight;
@@ -112,18 +122,13 @@
     });
 
     const get_next_page = () => {
-        var current_table = parseInt(sessionStorage.getItem('t_table_number'));
+        // var current_table = parseInt(sessionStorage.getItem('t_table_number'));
         var current_page = parseInt(sessionStorage.getItem('t_table_pagination'));
         let total = sessionStorage.getItem('count_rows');
         var last_page = parseInt(sessionStorage.getItem('last_page'));
         var next_page = current_page + 1;
         if (next_page <= last_page && total > 0) {
-            switch (current_table) {
-                case 1:
-                    load_sample_t1_data(next_page);
-                    break;
-                default:
-            }
+            load_sample_t1_data(next_page);
         }
     }
 
@@ -136,7 +141,7 @@
             data: {
                 method: 'load_sample_t1_data_last_page'
             },
-            success: function (response) {
+            success: function(response) {
                 sessionStorage.setItem('last_page', response);
                 let total = sessionStorage.getItem('count_rows');
                 var next_page = current_page + 1;
@@ -190,12 +195,13 @@
                 method: 'load_sample_t1_data',
                 current_page: current_page
             },
-            success: function (response) {
-                $('#sample_tbl_accounts').html(response);
-                // if (current_page == 1) {
-                // } else {
-                //     $('#sample_tbl_accounts').append(response);
-                // }
+            success: function(response) {
+                // $('#sample_tbl_accounts').html(response);
+                if (current_page == 1) {
+                    $('#sample_tbl_accounts').html(response);
+                } else {
+                    $('#sample_tbl_accounts').append(response);
+                }
                 sessionStorage.setItem('t_table_pagination', current_page);
                 count_sample_t1_data();
             }
@@ -210,7 +216,7 @@
             data: {
                 method: 'count_sample_t1_data'
             },
-            success: function (response) {
+            success: function(response) {
                 sessionStorage.setItem('count_rows', response);
                 var count = `Total Record: ${response}`;
                 $('#t_table_info').html(count);
@@ -224,6 +230,4 @@
             }
         });
     }
-
-   
 </script>
