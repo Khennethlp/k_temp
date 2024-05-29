@@ -65,22 +65,24 @@
                             </div>
                           </li>
                         </ul>
-                        <div class="col-lg-12 col-sm-4 col-md-7 col-6 ml-auto mt-2 d-flex align-items-center">
+                        <div class="col-lg-12 col-sm-4 col-md-7 col-6 ml-auto mt-2 mb-3 d-flex align-items-center">
                           <div class="input-group input-group-sm mr-3" style="height: 35px;">
-                            <input type="text" id="search_index" class="form-control float-right" style="height: 35px; max-width: auto;" placeholder="Search">
-                            <div class="input-group-append">
-                              <button type="submit" class="btn btn-default">
+                            <input type="text" id="search_index" class="form-control float-right" style="height: 40px; max-width: auto;" placeholder="Search">
+                            <!-- <div class="input-group-append">
+                              <button type="submit" class="btn btn-default" id="searchBtn" onclick="search();">
                                 <i class="fas fa-search"></i>
                               </button>
-                            </div>
+                            </div> -->
                           </div>
                           <div class="d-flex">
-                            <input type="text" name="" id="date_from" class="form-control mr-2" placeholder="Date From" onfocus="(this.type='date')" onblur="(this.type='text')">
-                            <input type="text" name="" id="date_to" class="form-control mr-2" placeholder="Date To" onfocus="(this.type='date')" onblur="(this.type='text')">
-                            <button class="btn text-danger" id="btnClear">Clear</button>
+                            <input type="text" name="" id="date_from" class="form-control mr-2" value="<?= $server_month; ?>" style="height: 40px;" placeholder="Date From" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            <input type="text" name="" id="date_to" class="form-control mr-2" style="height: 40px;" placeholder="Date To" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            <button type="submit" class="btn btn-default" id="search" ">
+                              <i class="fas fa-search"></i>
+                            </button>
                           </div>
+                          <button class="btn text-danger" id="btnClear">Clear</button>
                         </div>
-
                       </div>
                     </div>
 

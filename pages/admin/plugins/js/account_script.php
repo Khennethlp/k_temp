@@ -80,23 +80,24 @@
         }
     }
 
-    // const search_accounts = () => {
-    //     var search_account = document.getElementById('table_search');
+    const search_accounts = () => {
+        var search_account = document.getElementById('search_accounts').value;
 
-    //     $.ajax({
-    //         url: "../../process/admin/accounts_p.php",
-    //         type: 'POST',
-    //         cache: false,
-    //         data: {
-    //             method: 'sample_search_accounts',
-    //             search_account:search_account,
-    //         },
-    //         success: function(response) {
-    //             document.getElementById("sample_tbl_accounts").innerHTML = response;
-    //         }
-    //     });
+        $.ajax({
+            url: "../../process/admin/accounts_p.php",
+            type: 'POST',
+            cache: false,
+            data: {
+                method: 'sample_search_accounts',
+                search_account: search_account,
+            },
+            success: function(response) {
+                document.getElementById("sample_tbl_accounts").innerHTML = response;
+                // count_sample_t1_data();
+            }
+        });
 
-    // }
+    }
 
     const printTable_accounts = () => {
         // var date_from = document.getElementById("date_from");
@@ -203,18 +204,19 @@
                     $('#sample_tbl_accounts').append(response);
                 }
                 sessionStorage.setItem('t_table_pagination', current_page);
-                count_sample_t1_data();
+                count_sample_t1_data();  
             }
         });
     }
 
     const count_sample_t1_data = () => {
+        var search_account = document.getElementById('search_accounts').value;
         $.ajax({
             url: '../../process/admin/accounts_p.php',
             type: 'POST',
             cache: false,
             data: {
-                method: 'count_sample_t1_data'
+                method: 'count_sample_t1_data',
             },
             success: function(response) {
                 sessionStorage.setItem('count_rows', response);

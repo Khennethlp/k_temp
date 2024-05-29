@@ -6,6 +6,7 @@
         const date_to = document.getElementById("date_to");
         const search_index = document.getElementById("search_index");
         const btn = document.getElementById("btnClear");
+        const searchDate = document.getElementById("searchDate");
         const show_date = document.getElementById("show_date");
 
         let qw = false;
@@ -26,10 +27,12 @@
 
             date_from.style.display = isDateVisible ? 'block' : 'none';
             date_to.style.display = isDateVisible ? 'block' : 'none';
+            // searchDate.style.display = isDateVisible ? 'block' : 'none';
         }
 
         // Initially hide the button and date inputs
         btn.style.display = "none";
+        // searchDate.style.display = "none";
         date_from.style.display = "none";
         date_to.style.display = "none";
 
@@ -46,8 +49,16 @@
                 date_to.value = '';
                 search_index.value = '';
                 btn.style.display = "none";
-            } 
+                load_sample_tbl();
+            }
             // btn.style.display = "none";
+        });
+
+        document.querySelector('#search').addEventListener('keyup', function(e) {
+            if(e.key === 'Enter'){
+                e.preventDefault();
+                search();
+            }
         });
     });
 
@@ -60,7 +71,7 @@
             window.open('../../process/admin/print/print_dashboard.php?search_by=' + encodeURIComponent(search_index) + '&date_from=' + encodeURIComponent(date_from) + '&date_to=' + encodeURIComponent(date_to), '_blank', 'width=600, height=520');
         } else if (search_index) {
             window.open('../../process/admin/print/print_dashboard.php?search_by=' + encodeURIComponent(search_index), '_blank', 'width=600, height=520');
-        }else if(date_from && date_to){
+        } else if (date_from && date_to) {
             // var data_url = encodeURIComponent(search_index)+ '&date_from=' + encodeURIComponent(date_from) + '&date_to=' + encodeURIComponent(date_to);
             window.open('../../process/admin/print/print_dashboard.php?date_from=' + encodeURIComponent(date_from) + '&date_to=' + encodeURIComponent(date_to), '_blank', 'width=600, height=520');
         } else {
@@ -99,7 +110,7 @@
     }
 
     const load_sample_tbl = () => {
-       
+
         $.ajax({
             url: '../../process/admin/dashboard_p.php',
             type: 'POST',
@@ -114,5 +125,25 @@
         });
     }
 
-   
+    const search = () => {
+        var search = document.getElementById("search_index").value;
+        var dFrom = document.getElementById("date_from").value;
+        var dTo = document.getElementById("date_to").value;
+
+        $.ajax({
+            url: '../../process/admin/dashboard_p.php',
+            type: 'POST',
+            cache: false,
+            data: {
+                method: 'search',
+                search: search,
+                dFrom: dFrom,
+                dTo: dTo,
+            },
+            success: function(response) {
+                document.getElementById("index_table").innerHTML = response;
+                // load_sample_tbl();
+            }
+        });
+    }
 </script>

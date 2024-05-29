@@ -6,7 +6,7 @@ $method = $_POST['method'];
 
 function count_sample_t1_data($conn)
 {
-    $query = "SELECT count(id) AS total FROM user_accounts";
+    $query = "SELECT count(id) AS total FROM user_accounts ";
     $stmt = $conn->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
     $stmt->execute();
     if ($stmt->rowCount() > 0) {
@@ -22,7 +22,7 @@ function count_sample_t1_data($conn)
 if ($method == 'load_sample_t1_data_last_page') {
     $results_per_page = 10;
 
-    $number_of_result = intval(count_sample_t1_data($conn));
+    $number_of_result = intval(count_sample_t1_data( $conn));
 
     //determine the total number of pages available  
     $number_of_page = ceil($number_of_result / $results_per_page);
@@ -68,7 +68,8 @@ if ($method == 'load_sample_t1_data_last_page') {
 // }
 
 if ($method == 'count_sample_t1_data') {
-    echo count_sample_t1_data($conn);
+   
+   echo count_sample_t1_data($conn);
 }
 
 if ($method == 'load_sample_t1_data') {
@@ -139,34 +140,32 @@ if ($method == 'add_account') {
 		}
 	}
 }
-// if ($method == 'sample_search_accounts') {
-//     $search_account = $_POST['search_account'];
 
-//     $query = "SELECT * FROM user_accounts WHERE id_number LIKE '$search_account%'";
-//     $stmt = $conn->prepare($query);
-//     $stmt->execute();
+if ($method == 'sample_search_accounts') {
+    $search_account = $_POST['search_account'];
 
-//     $c = 0;
-//     if ($stmt->rowCount() > 0) {
-//         foreach ($stmt->fetchAll() as $row) {
-//             $c++;
-//             echo '<tr>';
-//             echo '<td>' . $c . '</td>';
-//             echo '<td>' . $row['id_number'] . '</td>';
-//             echo '<td>' . $row['full_name'] . '</td>';
-//             echo '<td>' . $row['username'] . '</td>';
-//             echo '<td>' . $row['section'] . '</td>';
-//             echo '<td>' . $row['role'] . '</td>';
-//             echo '</tr>';
-//         }
-//     } else {
-//         echo '<tr>';
-//         echo '<td colspan="6" style="text-align:center; color:red;">No Result !!!</td>';
-//         echo '</tr>';
-//     }
-// }
+    $query = "SELECT * FROM user_accounts WHERE id_number LIKE '$search_account%' OR full_name LIKE '$search_account%' OR role LIKE '$search_account%'";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
 
-
-
+    $c = 0;
+    if ($stmt->rowCount() > 0) {
+        foreach ($stmt->fetchAll() as $row) {
+            $c++;
+            echo '<tr>';
+            echo '<td>' . $c . '</td>';
+            echo '<td>' . $row['id_number'] . '</td>';
+            echo '<td>' . $row['full_name'] . '</td>';
+            echo '<td>' . $row['username'] . '</td>';
+            echo '<td>' . $row['section'] . '</td>';
+            echo '<td>' . $row['role'] . '</td>';
+            echo '</tr>';
+        }
+    } else {
+        echo '<tr>';
+        echo '<td colspan="6" style="text-align:center; color:red;">No Result !!!</td>';
+        echo '</tr>';
+    }
+}
 
 ?>

@@ -18,6 +18,7 @@
 // }
 
 date_default_timezone_set('Asia/Manila');
+$server_month = date('Y-m-01');
 $servername = 'localhost'; $username = 'root'; $password = '';
 
 try {
