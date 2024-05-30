@@ -79,7 +79,7 @@
         }
     }
 
-    const exportCSV_index = (table_id, separator = ',') => {
+    const exportCSV = (table_id, separator = ',') => {
         // Select rows from table_id
         var rows = document.querySelectorAll('table#' + table_id + ' tr');
         // Construct csv
@@ -97,7 +97,7 @@
         }
         var csv_string = csv.join('\n');
         // Download it / change the file name
-        var filename = 'Export-Index' + '_' + new Date().toLocaleDateString() + '.csv';
+        var filename = 'Export_Index' + '_' + new Date().toLocaleDateString() + '.csv';
         var link = document.createElement('a');
         link.style.display = 'none';
         link.setAttribute('target', '_blank');

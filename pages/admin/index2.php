@@ -100,4 +100,4 @@
 </div>
 
 <?php include 'plugins/footer.php';?>
-<?php //include 'plugins/js/script.js';?>
+<?php include 'plugins/js/index2.php';?>

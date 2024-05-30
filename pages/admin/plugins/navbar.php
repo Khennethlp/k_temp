@@ -160,7 +160,7 @@ if (!isset($_SESSION['username'])) {
                   Print (Default)
                 </button>
 
-                <button class="dropdown-item" onclick="exportCSV_index('index_tbl')">
+                <button class="dropdown-item" onclick="exportCSV('index_tbl')">
                   <i class="fas fa-file-csv mr-2"></i>
                   Export CSV (Default)
                 </button>
@@ -173,7 +173,7 @@ if (!isset($_SESSION['username'])) {
                   Print (DT)
                 </button>
 
-                <button class="dropdown-item" onclick="exportCSV()">
+                <button class="dropdown-item" onclick="exportCSV('myDataTable')">
                   <i class="fas fa-file-csv mr-2"></i>
                   Export CSV (DT)
                 </button>
@@ -186,7 +186,7 @@ if (!isset($_SESSION['username'])) {
                   Print (Pagination)
                 </button>
 
-                <button class="dropdown-item" onclick="exportCSV()">
+                <button class="dropdown-item" onclick="exportCSV('pagination_tbl')">
                   <i class="fas fa-file-csv mr-2"></i>
                   Export CSV (Pagination)
                 </button>
@@ -199,7 +199,7 @@ if (!isset($_SESSION['username'])) {
                   Print (Account)
                 </button>
 
-                <button class="dropdown-item" onclick="exportCSV_accounts()">
+                <button class="dropdown-item" onclick="exportCSV('tbl_k')">
                   <i class="fas fa-file-csv mr-2"></i>
                   Export CSV (Account)
                 </button>

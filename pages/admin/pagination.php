@@ -56,7 +56,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body table-responsive p-0" style="height: 300px;">
-                                            <table class="table table-head-fixed text-nowrap">
+                                            <table class="table table-head-fixed text-nowrap" id="pagination_tbl">
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
