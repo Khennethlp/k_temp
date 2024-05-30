@@ -76,6 +76,157 @@ if (!isset($_SESSION['username'])) {
       }
     }
 
+    /* ============================================================== */
+    /* QR Code */
+    body .user-input-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 40%;
+    }
+
+    body .user-input-section .user-input {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    body .user-input-section .user-input label {
+      font-size: 1.5rem;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body .user-input-section .user-input input {
+      width: 80%;
+      max-width: 35rem;
+      font-size: 16px;
+      outline: none;
+      border: none;
+      border-radius: 0.5rem;
+      background-color: #666666;
+      padding: 1.5rem 1rem;
+      margin: 1rem 1rem 2rem 1rem;
+      color: #fff;
+    }
+
+    body .user-input-section .user-input input::placeholder {
+      color: #fff;
+    }
+
+    body .button {
+      outline: none;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 1.5rem 2.5rem;
+      margin-bottom: 3rem;
+      background-color: #5b92799d;
+      background-color: #92dce5;
+      color: black;
+      font-family: sans-serif;
+      font-size: 1.6rem;
+    }
+
+    button:hover {
+      opacity: .7;
+    }
+
+    body .qr-code-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40%;
+    }
+
+    body .qr-code-container .qr-code {
+      display: flex;
+      border-radius: 1rem;
+      background-color: #7c7c7c33;
+      width: fit-content;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2rem;
+    }
+
+    body .qr-code-container .qr-code button {
+      display: flex;
+      justify-content: center;
+      background-color: #1f1f1f;
+      color: #eae6e5;
+      border: none;
+      outline: none;
+      width: 100%;
+      margin-top: 2.5rem;
+      border-radius: 1rem;
+    }
+
+    body .qr-code-container .qr-code button a {
+      font-family: sans-serif;
+      font-size: 1.5rem;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      color: #eae6e5;
+      padding: 1rem;
+    }
+
+    /* ============================================================== */
+    /* ============================================================== */
+    .contents {
+      width: 400px;
+      position: relative;
+      top: 0;
+      left: 50%;
+      transform: translate(0, -100%);
+      background-color: #001f3f;
+      padding: 20px 10px;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    input {
+      width: 300px;
+      color: white;
+      padding: 15px 10px;
+      border: 1px solid rgb(52, 51, 51);
+      background: #083358;
+      border-radius: 10px;
+      font-size: 17px;
+      outline: none;
+    }
+
+    input:focus {
+      border: 1px solid rgb(4, 84, 213);
+    }
+
+    #barcode {
+      box-shadow: 0 0 20px rgb(8, 51, 88, 0.3);
+      width: 300px;
+      border-radius: 10px;
+      margin: 30px 0px 30px 0px;
+    }
+
+    #btn {
+      padding: 12px 40px;
+      background-color: #ffd717;
+      cursor: pointer;
+      color: #000;
+      font-size: 17px;
+      border: none;
+      border-radius: 3px;
+    }
+    .downloadLink {
+      margin-top: 10px;
+      padding: 12px;
+      background-color: #ffd717;
+      cursor: pointer;
+      /* color: #000;
+      font-size: 17px;
+      border: none;
+      border-radius: 3px; */
+    }
+
+    /* ============================================================== */
     .active {
       background-color: #AA2138 !important;
       border-bottom: 2px solid #ffffff !important;
@@ -90,17 +241,19 @@ if (!isset($_SESSION['username'])) {
       padding: 0;
       margin: 0;
     }
+
     li a {
       padding: 5px;
-      display: inline-flex; /* Ensure the padding and width apply correctly */
-      
+      display: inline-flex;
+      /* Ensure the padding and width apply correctly */
+
     }
+
     .searchBy-item {
       padding: 2px 0;
       max-width: 100px;
       /* margin: 0 0px; */
     }
-   
   </style>
 </head>
 <!-- sidebar-collapse -->
@@ -149,7 +302,7 @@ if (!isset($_SESSION['username'])) {
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             <i class="fas fa-file-alt mr-1 text-white"></i> File
+              <i class="fas fa-file-alt mr-1 text-white"></i> File
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
@@ -237,7 +390,7 @@ if (!isset($_SESSION['username'])) {
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle no-caret" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <!-- <i class="fas fa-ellipsis-v mr-2"></i> -->
-             <i class="fas fa-cog mr-1 text-white"></i> Theme
+              <i class="fas fa-cog mr-1 text-white"></i> Theme
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item">

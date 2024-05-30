@@ -42,34 +42,32 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="card">
-                                        <div class="card-header">
-                                            <div class="row">
-                                                <div class="col-sm-4 ml-auto mt-2 d-flex align-items-center">
-                                                    <div class="input-group input-group-sm mr-3" style="height: 35px;">
-                                                        <input type="text" id="search_index" class="form-control float-right" style="height: 35px;" placeholder="Search">
-                                                        <div class="input-group-append">
-                                                            <button type="submit" class="btn btn-default">
-                                                                <i class="fas fa-search"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
 
+                                        <div class="card-body table-responsive p-0" style="height: 800px;">
+                                            <section>
+                                                <div class="user-input-section">
+                                                    <section class="heading">
+                                                        <div class="title">QRcodes</div>
+                                                        <div class="sub-title">Generate QRCode for anything!</div>
+                                                    </section>
+                                                    <section class="user-input">
+                                                        <input type="text" placeholder="Type something..." name="input_text" id="input_text" autocomplete="off">
+                                                        <button class="button" type="submit">Generate</button>
+                                                    </section>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body table-responsive p-0" style="height: 500px;">
-                                            <table class="table table-head-fixed text-nowrap" id="acc_tbl">
-                                                <thead>
-                                                    <tr>
-                                                        <th>#</th>
-                                                        <th>Name</th>
-                                                        <th>Details</th>
-                                                        <th>Date</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="index_table">
-                                                </tbody>
-                                            </table>
+                                                <div class="qr-code-container">
+                                                    <div class="qr-code"></div>
+                                                </div>
+                                            </section>
+                                            <section>
+                                                <div class="bg"></div>
+                                                <div class="contents">
+                                                    <input type="text" id="text" placeholder="Type here...">
+                                                    <svg id="barcode"></svg>
+                                                    <button id="btn">Generate</button>
+                                                    <a id="downloadLink" class="downloadLink" download="barcode.png" style="display: none;">Download Barcode</a>
+                                                </div>
+                                            </section>
                                         </div>
                                     </div>
                                 </div>
@@ -91,4 +89,4 @@
 </div>
 
 <?php include 'plugins/footer.php'; ?>
-<?php include 'plugins/js/dashboard_script.php'; ?>
+<?php include 'plugins/js/barQr_script.php'; ?>
