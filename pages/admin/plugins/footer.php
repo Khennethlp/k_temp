@@ -1,35 +1,13 @@
 <footer class="main-footer text-sm">
-<<<<<<< HEAD
-    Developed by: Bruno Mars
-    <div class="float-right d-none d-sm-inline-block">
-      <strong>Copyright &copy;
-        <script>   
-=======
   Developed by: Bruno Mars
   <div class="float-right d-none d-sm-inline-block">
     <strong>Copyright &copy;
       <script>
->>>>>>> 4e4057db238dcd79ef1ca7b5e48570a32c01c4d2
         var currentYear = new Date().getFullYear();
         if (currentYear !== 2024) {
           document.write("2024 - " + currentYear);
         } else {
           document.write(currentYear);
-<<<<<<< HEAD
-        };</script>. 
-        </strong>
-      All rights reserved.
-    </div>
-  </footer>
-<?php
-//MODALS
-include '../../modals/logout_modal.php';
-// include '../../modals/new_account.php';
-// include '../../modals/update_account.php';
-// include '../../modals/import_accounts.php';
-?>
-<!-- jQuery -->
-=======
         };
       </script>.
     </strong>
@@ -52,7 +30,6 @@ include '../../modals/add_users.php';
 <script src="https://cdn.datatables.net/scroller/2.1.0/js/dataTables.scroller.min.js"></script>
 
 
->>>>>>> 4e4057db238dcd79ef1ca7b5e48570a32c01c4d2
 <script src="../../plugins/jquery/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="../../plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -70,10 +47,6 @@ include '../../modals/add_users.php';
 <script src="../../dist/js/adminlte.js"></script>
 <!-- AdminLTE App -->
 <script src="../../dist/js/popup_center.js"></script>
-<<<<<<< HEAD
-
-</body>
-=======
 <script src="plugins/js/script.js"></script>
 <script src="plugins/js/custom.js"></script>
 <script>
@@ -83,5 +56,4 @@ include '../../modals/add_users.php';
 </script>
 </body>
 
->>>>>>> 4e4057db238dcd79ef1ca7b5e48570a32c01c4d2
 </html>

@@ -155,11 +155,6 @@
   </section>
 </div>
 
-<<<<<<< HEAD
-<?php include 'plugins/footer.php';?>
-<?php //include 'plugins/js/dashboard_script.php';?>
-=======
 <?php include 'plugins/footer.php'; ?>
 <?php include 'plugins/js/dashboard_script.php';
 ?>
->>>>>>> 4e4057db238dcd79ef1ca7b5e48570a32c01c4d2

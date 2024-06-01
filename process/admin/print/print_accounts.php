@@ -15,10 +15,10 @@ $query = "";
 $params = [];
 
 if (!empty($search)) {
-    $query = "SELECT * FROM user_accounts WHERE CONCAT(id_number, ' ', full_name, ' ', username, ' ', section, ' ', role) LIKE :search";
+    $query = "SELECT * FROM m_accounts WHERE CONCAT(emp_id, ' ', fullname, ' ', username, ' ', section, ' ', role) LIKE :search";
     $params[':search'] = '%' . $search . '%';
 } else {
-    $query = "SELECT * FROM user_accounts";
+    $query = "SELECT * FROM m_accounts";
 }
 
 $stmt = $conn->prepare($query);
@@ -42,8 +42,8 @@ if ($stmt->rowCount() > 0) {
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $table .= '<tr style="border: 1px solid black;">';
         $table .= '<td style="border: 1px solid black; padding:13px;">' . $c++ . '</td>';
-        $table .= '<td style="border: 1px solid black; padding:14px;">' . htmlspecialchars($row['id_number']) . '</td>';
-        $table .= '<td style="border: 1px solid black; padding:16px;">' . htmlspecialchars($row['full_name']) . '</td>';
+        $table .= '<td style="border: 1px solid black; padding:14px;">' . htmlspecialchars($row['emp_id']) . '</td>';
+        $table .= '<td style="border: 1px solid black; padding:16px;">' . htmlspecialchars($row['fullname']) . '</td>';
         $table .= '<td style="border: 1px solid black; padding:16px;">' . htmlspecialchars($row['username']) . '</td>';
         $table .= '<td style="border: 1px solid black; padding:16px;">' . htmlspecialchars($row['section']) . '</td>';
         $table .= '<td style="border: 1px solid black; padding:16px;">' . htmlspecialchars($row['role']) . '</td>';

@@ -4,8 +4,6 @@
         load_sample_table();
     });
 
- 
-
     const add_account = () => {
         var emp_id = document.getElementById('add_emp_id').value;
         var fullname = document.getElementById('add_fullname').value;

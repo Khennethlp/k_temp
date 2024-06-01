@@ -1,39 +1,22 @@
-<<<<<<< HEAD
-<?php 
-//SESSION
-include '../../process/login.php';
-
-=======
 <?php
 //SESSION 
 include '../../process/login.php';
->>>>>>> 4e4057db238dcd79ef1ca7b5e48570a32c01c4d2
 if (!isset($_SESSION['username'])) {
   header('location:../../');
   exit;
 } else if ($_SESSION['role'] == 'user') {
   header('location: ../../page/user/pagination.php');
   exit;
-<<<<<<< HEAD
-}
-?>  
-<!DOCTYPE html>
-<html lang="en">
-=======
 } ?>
 <!DOCTYPE html>
 <html lang="en">
 
->>>>>>> 4e4057db238dcd79ef1ca7b5e48570a32c01c4d2
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Admin</title>
 
-<<<<<<< HEAD
-=======
   <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css" />
->>>>>>> 4e4057db238dcd79ef1ca7b5e48570a32c01c4d2
   <link rel="icon" href="../../dist/img/logo.png" type="image/x-icon" />
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="../../dist/css/font.min.css">
@@ -43,10 +26,6 @@ if (!isset($_SESSION['username'])) {
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-<<<<<<< HEAD
-    <!-- Sweet Alert -->
-  <link rel="stylesheet" href="../../plugins/sweetalert2/dist/sweetalert2.min.css">
-=======
   <!-- Sweet Alert -->
   <link rel="stylesheet" href="../../plugins/sweetalert2/dist/sweetalert2.min.css">
 
@@ -56,7 +35,6 @@ if (!isset($_SESSION['username'])) {
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.css" />
   <link rel="stylesheet" href="https://cdn.datatables.net/scroller/2.1.0/css/scroller.dataTables.min.css">
   <!-- <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script> -->
->>>>>>> 4e4057db238dcd79ef1ca7b5e48570a32c01c4d2
   <style>
     .loader {
       border: 16px solid #f3f3f3;
@@ -72,10 +50,6 @@ if (!isset($_SESSION['username'])) {
       position: relative;
       overflow: hidden;
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 4e4057db238dcd79ef1ca7b5e48570a32c01c4d2
     .btn-file input[type=file] {
       position: absolute;
       top: 0;
@@ -86,64 +60,12 @@ if (!isset($_SESSION['username'])) {
       text-align: right;
       filter: alpha(opacity=0);
       opacity: 0;
-<<<<<<< HEAD
-      outline: none;   
-=======
       outline: none;
->>>>>>> 4e4057db238dcd79ef1ca7b5e48570a32c01c4d2
       cursor: inherit;
       display: block;
     }
 
     @keyframes spin {
-<<<<<<< HEAD
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(1080deg); }
-    } 
-    .active{
-      background-color: #AA2138 !important;
-      border-bottom: 2px solid #ffffff !important;
-    }
-    .b-border{
-      border-bottom: 2px solid #AA2138 !important;
-    }
-  </style>
-</head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-
-  <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="../../dist/img/logo.png" alt="logo" height="60" width="60">
-    <noscript>
-      <br>
-      <span>We are facing <strong>Script</strong> issues. Kindly enable <strong>JavaScript</strong>!!!</span>
-      <br>
-      <span>Call IT Personnel Immediately!!! They will fix it right away.</span>
-    </noscript>
-  </div>
-
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>
-    </ul>
-
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-          <i class="fas fa-expand-arrows-alt"></i>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <!-- /.navbar -->
-
-=======
       0% {
         transform: rotate(0deg);
       }
@@ -335,4 +257,3 @@ if (!isset($_SESSION['username'])) {
       </ul>
     </nav>
     <!-- /.navbar -->
->>>>>>> 4e4057db238dcd79ef1ca7b5e48570a32c01c4d2
