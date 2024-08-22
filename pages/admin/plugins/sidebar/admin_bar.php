@@ -94,6 +94,18 @@
               </p>
               </a>
         </li>
+        <li class="nav-item">
+          <?php if ($_SERVER['REQUEST_URI'] == "/k_temp/pages/admin/load_more.php") { ?>
+            <a href="load_more.php" class="nav-link active">
+            <?php } else { ?>
+              <a href="load_more.php" class="nav-link">
+              <?php } ?>
+              <i class="nav-icon fas fa-ellipsis-h"></i>
+              <p>
+                Load More
+              </p>
+              </a>
+        </li>
         <?php include 'logout.php'; ?>
       </ul>
     </nav>

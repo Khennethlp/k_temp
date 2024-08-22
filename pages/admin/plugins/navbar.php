@@ -29,12 +29,17 @@ if (!isset($_SESSION['username'])) {
   <!-- Sweet Alert -->
   <link rel="stylesheet" href="../../plugins/sweetalert2/dist/sweetalert2.min.css">
 
-  <!-- jquery datatables -->
-  <link rel="stylesheet" href="plugins/css/datatables.css" />
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/scroller/2.1.0/css/dataTables.scroller.min.css"/>
 
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.5/datatables.min.css" />
-  <link rel="stylesheet" href="https://cdn.datatables.net/scroller/2.1.0/css/scroller.dataTables.min.css">
-  <!-- <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script> -->
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- DataTables JavaScript -->
+  <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/scroller/2.1.0/js/dataTables.scroller.min.js"></script>
+ 
   <style>
     .loader {
       border: 16px solid #f3f3f3;
@@ -215,6 +220,7 @@ if (!isset($_SESSION['username'])) {
       border: none;
       border-radius: 3px;
     }
+
     .downloadLink {
       margin-top: 10px;
       padding: 12px;
@@ -263,7 +269,7 @@ if (!isset($_SESSION['username'])) {
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-      <img class="animation__shake" src="../../dist/img/logo.png" alt="logo" height="60" width="60">
+      <img class="" src="../../dist/img/spinner1.gif" alt="logo" height="60" width="60">
       <noscript>
         <br>
         <span>We are facing <strong>Script</strong> issues. Kindly enable <strong>JavaScript</strong>!!!</span>

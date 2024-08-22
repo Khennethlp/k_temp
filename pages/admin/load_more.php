@@ -7,12 +7,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Table Switching</h1>
+          <h1 class="m-0">Load More</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-            <li class="breadcrumb-item ">Table Switching</li>
+            <li class="breadcrumb-item ">Load More</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -57,7 +57,7 @@
                       </div>
                     </div>
 
-                    <div class="card-body table-responsive p-0" style="height: 500px;">
+                    <div class="card-body table-responsive p-0" style="height: 540px;">
                       <table class="table table-head-fixed text-nowrap" id="acc_tbl">
                         <thead>
                           <tr>
@@ -65,12 +65,13 @@
                             <th>Name</th>
                             <th>Username</th>
                             <th>Email</th>
-                            <th>Role</th>
+                            <th>Country</th>
+                            <th>Bank</th>
                             <th>Date</th>
-                            
+                            <th>Status</th>
                           </tr>
                         </thead>
-                        <tbody id="index_table">
+                        <tbody id="load_more_table">
                           
                         </tbody>
                       </table>
@@ -78,22 +79,14 @@
                   </div>
                 </div>
               </div>
-              <hr>
-              <div class="row">
-                <h5>another content here...</h5>
-              </div>
             </div>
-            <!-- /.card-body -->
           </div>
-          <!-- /.card -->
         </div>
-        <!-- /.col -->
       </div>
-      <!-- /.row -->
     </div>
   </section>
 </div>
 
 <?php include 'plugins/footer.php'; ?>
-<?php include 'plugins/js/dashboard_script.php';
+<?php include 'plugins/js/load_more_script.php';
 ?>

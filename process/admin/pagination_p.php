@@ -6,7 +6,7 @@ $method = $_POST['method'];
 
 function count_sample_tbl($search_arr, $conn)
 {
-	$query = "SELECT COUNT(id) as total FROM t_exercise WHERE name LIKE '". $search_arr['sample_search']."%' ";
+	$query = "SELECT COUNT(id) as total FROM user_details WHERE name LIKE '". $search_arr['sample_search']."%' ";
 	$stmt = $conn->prepare($query);
 	$stmt->execute();
 	if ($stmt->rowCount() > 0) {
@@ -36,7 +36,7 @@ if($method == 'load_pagination'){
 	$page_first_result = ($current_page - 1) * $results_per_page;
 	$c = $page_first_result;
 
-    $query = "SELECT * FROM t_exercise LIMIT " . $page_first_result . ", " . $results_per_page;
+    $query = "SELECT * FROM user_details LIMIT " . $page_first_result . ", " . $results_per_page;
     $stmt = $conn->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
     $stmt->execute();
 
@@ -47,8 +47,9 @@ if($method == 'load_pagination'){
             echo '<tr>';
             echo '<td>'. $c .'</td>';
             echo '<td>'. $row['name'] .'</td>';
-            echo '<td>'. $row['details'] .'</td>';
-            echo '<td>'. date('Y/M/D h:i:s', strtotime($row['date_updated'])) .'</td>';
+            echo '<td>'. $row['email'] .'</td>';
+            echo '<td>'. $row['address'] .'</td>';
+            echo '<td>'. $row['country'] .'</td>';
             echo '</tr>';
         }
     }else{
@@ -83,7 +84,7 @@ if ($method == 'sample_search') {
 	$page_first_result = ($current_page - 1) * $results_per_page;
 	$c = $page_first_result;
 
-    $query = "SELECT * FROM t_exercise WHERE name LIKE '$sample_search%' OR details LIKE '$sample_search%' ";
+    $query = "SELECT * FROM user_details WHERE name LIKE '$sample_search%' ";
     $stmt = $conn->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
 	$stmt->execute();
 
@@ -93,8 +94,9 @@ if ($method == 'sample_search') {
             echo '<tr>';
             echo '<td>'. $c .'</td>';
             echo '<td>'. $row['name'] .'</td>';
-            echo '<td>'. $row['details'] .'</td>';
-            echo '<td>'. date('Y/M/d H:i:s', strtotime($row['date_updated'])) .'</td>';
+            echo '<td>'. $row['email'] .'</td>';
+            echo '<td>'. $row['address'] .'</td>';
+            echo '<td>'. $row['country'] .'</td>';
             echo '</tr>';
         }
     }else{

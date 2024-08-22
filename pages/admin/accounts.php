@@ -70,7 +70,7 @@
                                                         <th>ID Number</th>
                                                         <th>Full Name</th>
                                                         <th>Username</th>
-                                                        <th>Section</th>
+                                                        <th>Email</th>
                                                         <th>Role</th>
                                                     </tr>
                                                 </thead>

@@ -6,7 +6,7 @@ $method = $_POST['method'];
 
 function count_sample_t1_data($conn)
 {
-    $query = "SELECT count(id) AS total FROM user_accounts ";
+    $query = "SELECT count(id) AS total FROM m_accounts ";
     $stmt = $conn->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
     $stmt->execute();
     if ($stmt->rowCount() > 0) {
@@ -83,7 +83,7 @@ if ($method == 'load_sample_t1_data') {
 
     $c = $page_first_result;
 
-    $query = "SELECT * FROM user_accounts LIMIT " . $page_first_result . ", " . $results_per_page;
+    $query = "SELECT * FROM m_accounts LIMIT " . $page_first_result . ", " . $results_per_page;
     $stmt = $conn->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
     $stmt->execute();
     if ($stmt->rowCount() > 0) {
@@ -92,10 +92,10 @@ if ($method == 'load_sample_t1_data') {
             // echo '<tr style="cursor:pointer; text-align:center;" class="modal-trigger" onclick="load_sample_table_2(&quot;' . $row['id'] . '~!~' . $row['sample_id'] . '&quot;)">';
             echo '<tr>';
             echo '<td>' . $c . '</td>';
-            echo '<td>' . $row['id_number'] . '</td>';
-            echo '<td>' . $row['full_name'] . '</td>';
+            echo '<td>' . $row['emp_id'] . '</td>';
+            echo '<td>' . $row['fullname'] . '</td>';
             echo '<td>' . $row['username'] . '</td>';
-            echo '<td>' . $row['section'] . '</td>';
+            echo '<td>' . $row['email'] . '</td>';
             echo '<td>' . $row['role'] . '</td>';
             echo '</tr>';
         }
@@ -114,7 +114,7 @@ if ($method == 'add_account') {
 	$section = $_POST['section'];
 	$role = $_POST['role'];
 
-	$check_duplicate = "SELECT COUNT(*) FROM user_accounts WHERE emp_id = :emp_id ";
+	$check_duplicate = "SELECT COUNT(*) FROM m_accounts WHERE emp_id = :emp_id ";
 	$stmt_duplicate = $conn->prepare($check_duplicate, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
 	$stmt_duplicate->bindParam(':emp_id', $emp_id);
 	$stmt_duplicate->execute();
@@ -124,7 +124,7 @@ if ($method == 'add_account') {
 		echo 'duplicate';
 	} else {
 		try {
-			$insert = "INSERT INTO user_accounts (id_number, full_name, username, password, section,role) VALUES (:emp_id, :fullname, :username, :password, :section, :role)";
+			$insert = "INSERT INTO m_accounts (id_number, full_name, username, password, section,role) VALUES (:emp_id, :fullname, :username, :password, :section, :role)";
 			$stmt = $conn->prepare($insert, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
 			$stmt->bindParam(':emp_id', $emp_id);
 			$stmt->bindParam(':fullname', $fullname);
@@ -144,7 +144,7 @@ if ($method == 'add_account') {
 if ($method == 'sample_search_accounts') {
     $search_account = $_POST['search_account'];
 
-    $query = "SELECT * FROM user_accounts WHERE id_number LIKE '$search_account%' OR full_name LIKE '$search_account%' OR role LIKE '$search_account%'";
+    $query = "SELECT * FROM m_accounts WHERE id_number LIKE '$search_account%' OR full_name LIKE '$search_account%' OR role LIKE '$search_account%'";
     $stmt = $conn->prepare($query);
     $stmt->execute();
 

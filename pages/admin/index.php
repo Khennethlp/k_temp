@@ -92,7 +92,9 @@
                           <tr>
                             <th>#</th>
                             <th>Name</th>
-                            <th>Details</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Role</th>
                             <th>Date</th>
 
                           </tr>

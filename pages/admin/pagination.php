@@ -61,8 +61,9 @@
                                                     <tr>
                                                         <th>#</th>
                                                         <th>Name</th>
-                                                        <th>Details</th>
-                                                        <th>Date</th>
+                                                        <th>Email</th>
+                                                        <th>Address</th>
+                                                        <th>Country</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="sample_tbl">
